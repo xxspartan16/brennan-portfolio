@@ -1,5 +1,7 @@
 # Brennan LeBlanc — software portfolio
 
+[View the live portfolio](https://brennan-portfolio-jade.vercel.app/)
+
 A personal portfolio for three tools: **Gaugeworks**, **Relaylab**, and **Patchglass**. The projects connect a manufacturing and quality-control background to software that makes results inspectable.
 
 ## Run locally
@@ -14,11 +16,11 @@ npm run build
 
 The portfolio includes static demo builds in `public/demos/`, so each case study opens a working application on the same deployment. The demo copies are generated assets. Each project's original source, tests, and documentation lives in its own repository:
 
-| Project | Focus | Source |
-| --- | --- | --- |
-| Gaugeworks | Process measurements, control charts, and signal rules | [xxspartan16/gaugeworks](https://github.com/xxspartan16/gaugeworks) |
-| Relaylab | Deterministic workflow execution, retries, and replay | [xxspartan16/relaylab](https://github.com/xxspartan16/relaylab) |
-| Patchglass | Guarded JSON migrations and reversible patches | [xxspartan16/patchglass](https://github.com/xxspartan16/patchglass) |
+| Project | Focus | Live app | Source |
+| --- | --- | --- | --- |
+| Gaugeworks | Process measurements, control charts, and signal rules | [Try Gaugeworks](https://gaugeworks.vercel.app/) | [xxspartan16/gaugeworks](https://github.com/xxspartan16/gaugeworks) |
+| Relaylab | Deterministic workflow execution, retries, and replay | [Try Relaylab](https://relaylab-theta.vercel.app/) | [xxspartan16/relaylab](https://github.com/xxspartan16/relaylab) |
+| Patchglass | Guarded JSON migrations and reversible patches | [Try Patchglass](https://patchglass.vercel.app/) | [xxspartan16/patchglass](https://github.com/xxspartan16/patchglass) |
 
 To update bundled demos, clone those repositories beside this one, build each app, then run `npm run refresh-demos` and `npm run check` here.
 
