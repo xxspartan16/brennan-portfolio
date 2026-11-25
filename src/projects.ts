@@ -13,7 +13,6 @@ export type Project = {
   next: string;
 };
 
-// Bundled demo builds keep each case study runnable from the portfolio itself.
 export const projects: Project[] = [
   {
     id: 'gaugeworks',
@@ -21,7 +20,7 @@ export const projects: Project[] = [
     title: 'Gaugeworks',
     category: 'Process quality / Data analysis',
     summary:
-      'A clearer picture of process drift. Turn a batch of measurements into an inspectable control chart.',
+      'Import part measurements, set a baseline, and trace signs of process drift back to individual parts.',
     tags: ['TypeScript', 'React', 'Statistical analysis'],
     problem:
       'An average can look acceptable while a production process quietly shifts. Gaugeworks separates a reference baseline from new observations so the shift cannot simply move its own goalposts.',
@@ -31,9 +30,9 @@ export const projects: Project[] = [
       'Surface the exact observations behind each signal. A warning should be something you can inspect.',
     ],
     limits:
-      'An exploratory tool using synthetic examples. Statistical signals warrant investigation; they do not establish a cause or certify a production process.',
+      'The bundled measurements are synthetic. A signal identifies a part to investigate. A quality engineer still needs to determine its cause.',
     next: 'Measurement-system studies and saved, comparable baseline revisions.',
-    demoUrl: './demos/gaugeworks/index.html',
+    demoUrl: 'https://gaugeworks.vercel.app/',
     sourceUrl: 'https://github.com/xxspartan16/gaugeworks',
   },
   {
@@ -42,19 +41,19 @@ export const projects: Project[] = [
     title: 'Relaylab',
     category: 'Workflow reliability / Simulation',
     summary:
-      'Make a workflow fail on purpose. Follow retries, parallel work, and duplicate requests through a reproducible trace.',
+      'Simulate failed tasks and duplicate requests, then replay the event trace to see which work recovered.',
     tags: ['TypeScript', 'State machines', 'Graph algorithms'],
     problem:
       'The happy path tells very little about a workflow. Relaylab makes the awkward paths visible: a dependency fails, a retry collides with another delivery, or two branches finish in an unexpected order.',
     decisions: [
       'Use a logical clock and deterministic inputs so a failure can be reproduced without waiting on real services.',
       'Validate the dependency graph before executing a run. Missing dependencies and cycles are explicit errors.',
-      'Keep the event trace separate from its visual replay, and model idempotency conflicts rather than silently hiding them.',
+      'Keep the event trace separate from its visual replay, and model idempotency conflicts as distinct results.',
     ],
     limits:
-      'A local simulator, not a durable job runner. It does not send webhooks or promise exactly-once execution in a distributed system.',
+      'The browser models each event locally. Sending real webhooks and running jobs across machines require an external execution system.',
     next: 'Persisted trace comparison and pluggable scheduling policies.',
-    demoUrl: './demos/relaylab/index.html',
+    demoUrl: 'https://relaylab-theta.vercel.app/',
     sourceUrl: 'https://github.com/xxspartan16/relaylab',
   },
   {
@@ -63,7 +62,7 @@ export const projects: Project[] = [
     title: 'Patchglass',
     category: 'Developer tooling / Configuration',
     summary:
-      'See exactly what a configuration change does. Compare JSON, preview a migration, and walk it back.',
+      'Compare two JSON configurations, inspect each change, and verify that rollback restores the original.',
     tags: ['TypeScript', 'Tree traversal', 'JSON Patch'],
     problem:
       'A small configuration edit can change more than it appears to. Patchglass turns the difference between two JSON documents into explicit operations, with a before-and-after view for every step.',
@@ -73,9 +72,9 @@ export const projects: Project[] = [
       'Apply changes immutably and generate a rollback plan so inspection never mutates the original document.',
     ],
     limits:
-      'Arrays are compared by position, not domain identity. A valid patch is not proof that an application will accept the resulting configuration.',
+      'Arrays are compared by position. The receiving application still needs to validate the resulting configuration against its own schema.',
     next: 'Identity-aware array matching and a reusable command-line package.',
-    demoUrl: './demos/patchglass/index.html',
+    demoUrl: 'https://patchglass.vercel.app/',
     sourceUrl: 'https://github.com/xxspartan16/patchglass',
   },
 ];
